@@ -42,6 +42,7 @@ slider.getSliders().forEach((slider) => {
                 </div>`;
 
   // app.insertAdjacentHTML("afterbegin", html)
+  // jel ovo treba bit <ul>???
   app.innerHTML += html
 })
 
