@@ -1,4 +1,4 @@
-array = [
+export const data = [
     {
         id: 1,
         heading: "neki naslov",
