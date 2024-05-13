@@ -32,7 +32,7 @@ slider.getSliders().forEach((slider) => {
 
                   <div class="user">
                     <div class="user-image">
-                      <img src=${slider.user.image}/>
+                      <img class="user-avatar" src="${slider.user.image}"/>
                     </div>
                     <div class="user-info">
                       <p class="user-name">${slider.user.name}</p>

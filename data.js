@@ -5,7 +5,7 @@ export const data = [
         paragraph: "neki paragraph",
         user: {
             name: "Dario",
-            image: "",
+            image: "./images/person1.jpg",
             location: "Zagreb"
         }
     },
@@ -15,7 +15,7 @@ export const data = [
         paragraph: "neki paragraph",
         user: {
             name: "Pero",
-            image: "",
+            image: "./images/person2.jpg",
             location: "Paris"
         } 
     },
@@ -25,7 +25,7 @@ export const data = [
         paragraph: "neki paragraph",
         user: {
             name: "Marija",
-            image: "",
+            image: "./images/person3.jpg",
             location: "Pula"
         }
     },
@@ -35,7 +35,7 @@ export const data = [
         paragraph: "neki paragraph",
         user: {
             name: "Kruno",
-            image: "",
+            image: "./images/person4.jpg",
             location: "Beograd"
         }
     }

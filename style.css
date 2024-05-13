@@ -5,8 +5,19 @@
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* kako funkcionira top? */
+  top: 1%;
+  left: 25%;
   height: 500px;
-  width: 600px;
+  width: 50%;
+}
+
+.user {
+  display: flex;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
