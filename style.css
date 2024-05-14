@@ -1,14 +1,40 @@
-.slide {
+body {
   background-color: rgb(229, 229, 229);
+}
+
+.app {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
+}
+
+.app-heading {
+  width: 50%;
+  margin: 16px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+span {
+  color: rgb(0, 178, 0);
+  font-weight: 600;
+
+}
+
+.slide {
+  background-color: rgb(229, 229, 229);
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
   /* kako funkcionira top? */
-  top: 1%;
+  /* top: %; */
+  position: absolute;
   left: 25%;
-  height: 500px;
+  height: 400px;
   width: 50%;
 }
 
