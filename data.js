@@ -34,9 +34,9 @@ export const data = [
         heading: "Best financial decision ever!",
         paragraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. ",
         user: {
-            name: "Kruno",
+            name: "Kruno Martinovic",
             image: "./images/person4.jpg",
-            location: "Beograd"
+            location: "Belgrad, Serbia"
         }
     }
 ]

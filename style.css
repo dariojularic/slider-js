@@ -32,6 +32,7 @@ span {
   /* flex-direction: column; */
   /* kako funkcionira top? */
   /* top: %; */
+
   position: absolute;
   left: 25%;
   height: 400px;
@@ -40,6 +41,21 @@ span {
 
 .user {
   display: flex;
+  align-items: center;
+
+}
+
+.user-info {
+  margin-left: 8px;
+}
+
+.user-name {
+  margin: 4px;
+}
+
+.user-location {
+  margin: 4px;
+  color: gray;
 }
 
 .user-avatar {
