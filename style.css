@@ -37,12 +37,35 @@ span {
   left: 25%;
   height: 400px;
   width: 50%;
+  transition: 2s;
+}
+
+.review {
+  height: 400px;
+  width: 400px;
+}
+
+.slide:hover {
+  transform: translateX(50%);
+
+}
+
+button {
+  padding: 16px;
+  background-color: red;
+}
+
+.buttons {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .user {
   display: flex;
   align-items: center;
-
+  margin-left: 16px;
 }
 
 .user-info {
