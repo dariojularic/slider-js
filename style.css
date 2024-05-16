@@ -20,34 +20,36 @@ body {
   position: relative;
   margin: 0 auto;
   height: 300px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .slidez {
   height: 300px;
   width: 100%;
   position: absolute;
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 1s;
 }
 
 .slidez-1 {
-  background-color: red;
+  /* background-color: red; */
   transform: translateX(0%);
 }
 
 .slidez-2 {
-  background-color: blue;
+  /* background-color: blue; */
   transform: translateX(100%);
 }
 
 .slidez-3 {
-  background-color: green;
+  /* background-color: green; */
   transform: translateX(200%);
 }
 
 .slidez-4 {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   transform: translateX(300%);
 }
 
@@ -101,18 +103,9 @@ button {
   background-color: red;
 }
 
-.buttons {
-  /* width: 50%; */
-  /* height: 500px; */
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
-}
-
 .user {
   display: flex;
   align-items: center;
-  margin-left: 16px;
 }
 
 .user-info {
@@ -128,7 +121,7 @@ button {
   color: gray;
 }
 
-.user-avatar {
+img {
   border-radius: 50%;
   height: 50px;
   width: 50px;

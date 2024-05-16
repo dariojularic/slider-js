@@ -9,7 +9,11 @@ const slide1 = document.querySelector(".slidez-1");
 const slide2 = document.querySelector(".slidez-2");
 const slide3 = document.querySelector(".slidez-3");
 const slide4 = document.querySelector(".slidez-4");
-const container = document.querySelectorAll(".slidez");
+const slidezs = document.querySelectorAll(".slidez");
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
+const container = document.querySelector(".container");
+let currentIndex = 1;
 
 function sliderFactory() {
   let slidersArray = []
@@ -18,7 +22,9 @@ function sliderFactory() {
   const setSliders = (sliders) => slidersArray = sliders;
 
   const moveSlider = () => {
-    
+    slidezs.forEach((slide) => {
+      
+    })
   }
 
 
@@ -29,14 +35,14 @@ const slider = sliderFactory();
 slider.setSliders(data)
 
 
-let currentIndex = 0;
+let slideIndex = 0;
 slider.getSliders().forEach((slide) => {
   // console.log(slide)
   const html = `<h3>${slide.heading}</h3>
                 <p>${slide.paragraph}</p>
-                <div>
+                <div class="user">
                   <div class="user-image">
-                    <img src="${slide.user.image}
+                    <img src="${slide.user.image}"/>
                   </div>
                   <div class="user-info">
                     <p class="user-name">${slide.user.name}</p>
@@ -44,11 +50,29 @@ slider.getSliders().forEach((slide) => {
                   </div>
                 </div>`
 
-  console.log("slidez broj",container[currentIndex])
-  container[currentIndex].innerHTML = html
-  currentIndex++
+  // console.log("slidez broj",slidezs[currentIndex])
+  slidezs[slideIndex].innerHTML = html
+  slideIndex++
 
 })
+
+
+container.addEventListener("click", (event) => {
+  // console.log("event", event)
+})
+
+
+
+btnLeft.addEventListener("click", () => {
+  if (currentIndex >= slidezs.length) currentIndex = 0
+
+  for (let i = 0; i < slidezs.length; i++) {
+    slidezs[i].style.transform = `translateX(${(i * 100) - (currentIndex * 100)}%)`
+    console.log(slidezs[i].style.transform)
+  }
+  currentIndex++
+})
+
 
 // slider.getSliders().forEach((slider) => {
 //   const html = `<div class="slide">
