@@ -20,7 +20,7 @@ body {
   position: relative;
   margin: 0 auto;
   height: 300px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slidez {

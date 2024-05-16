@@ -21,14 +21,26 @@ function sliderFactory() {
   const getSliders = () => slidersArray;
   const setSliders = (sliders) => slidersArray = sliders;
 
-  const moveSlider = () => {
-    slidezs.forEach((slide) => {
-      
-    })
+  const moveSliderLeft = () => {
+    if (currentIndex >= slidezs.length) currentIndex = 0
+
+    for (let i = 0; i < slidezs.length; i++) {
+      slidezs[i].style.transform = `translateX(${(i * 100) - (currentIndex * 100)}%)`
+    }
+    currentIndex++
+  }
+
+  const moveSliderRight = () => {
+    if (currentIndex >= slidezs.length) currentIndex = 0
+
+    currentIndex--
+    for (let i = 0; i < slidezs.length; i++) {
+      slidezs[i].style.transform = `translateX(${(i * 100) + (currentIndex * 100)}%)`
+    }
   }
 
 
-  return {getSliders, setSliders}
+  return {getSliders, setSliders, moveSliderLeft, moveSliderRight}
 } 
 
 const slider = sliderFactory();
@@ -64,13 +76,11 @@ container.addEventListener("click", (event) => {
 
 
 btnLeft.addEventListener("click", () => {
-  if (currentIndex >= slidezs.length) currentIndex = 0
+  slider.moveSliderLeft()
+})
 
-  for (let i = 0; i < slidezs.length; i++) {
-    slidezs[i].style.transform = `translateX(${(i * 100) - (currentIndex * 100)}%)`
-    console.log(slidezs[i].style.transform)
-  }
-  currentIndex++
+btnRight.addEventListener("click", () => {
+  slider.moveSliderRight()
 })
 
 
