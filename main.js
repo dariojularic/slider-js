@@ -13,7 +13,7 @@ const slidezs = document.querySelectorAll(".slidez");
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 const container = document.querySelector(".container");
-let currentIndex = 1;
+let currentSlide = 1;
 
 function sliderFactory() {
   let slidersArray = []
@@ -22,21 +22,26 @@ function sliderFactory() {
   const setSliders = (sliders) => slidersArray = sliders;
 
   const moveSliderLeft = () => {
-    if (currentIndex >= slidezs.length) currentIndex = 0
+    if (currentSlide >= slidezs.length) currentSlide = 0
 
     for (let i = 0; i < slidezs.length; i++) {
-      slidezs[i].style.transform = `translateX(${(i * 100) - (currentIndex * 100)}%)`
+      slidezs[i].style.transform = `translateX(${(i * 100) - (currentSlide * 100)}%)`
     }
-    currentIndex++
+    currentSlide++
+    console.log("currentSlide is", currentSlide)
   }
+  
 
+
+  
   const moveSliderRight = () => {
-    if (currentIndex >= slidezs.length) currentIndex = 0
-
-    currentIndex--
+    if (currentSlide === 1) currentSlide = 4
+    
     for (let i = 0; i < slidezs.length; i++) {
-      slidezs[i].style.transform = `translateX(${(i * 100) + (currentIndex * 100)}%)`
+      slidezs[i].style.transform = `translateX(${(i * 100) - (currentSlide * 100)}%)`
     }
+    currentSlide--
+    console.log("currentSlide is", currentSlide)
   }
 
 
@@ -49,7 +54,6 @@ slider.setSliders(data)
 
 let slideIndex = 0;
 slider.getSliders().forEach((slide) => {
-  // console.log(slide)
   const html = `<h3>${slide.heading}</h3>
                 <p>${slide.paragraph}</p>
                 <div class="user">
@@ -62,18 +66,10 @@ slider.getSliders().forEach((slide) => {
                   </div>
                 </div>`
 
-  // console.log("slidez broj",slidezs[currentIndex])
   slidezs[slideIndex].innerHTML = html
   slideIndex++
 
 })
-
-
-container.addEventListener("click", (event) => {
-  // console.log("event", event)
-})
-
-
 
 btnLeft.addEventListener("click", () => {
   slider.moveSliderLeft()
@@ -82,34 +78,6 @@ btnLeft.addEventListener("click", () => {
 btnRight.addEventListener("click", () => {
   slider.moveSliderRight()
 })
-
-
-// slider.getSliders().forEach((slider) => {
-//   const html = `<div class="slide">
-//                   <div class="paragraph">
-//                     <h4>Best financial decision ever</h4>
-//                     <p>${slider.paragraph}</p>
-//                   </div>
-
-//                   <div class="user">
-//                     <div class="user-image">
-//                       <img class="user-avatar" src="${slider.user.image}"/>
-//                     </div>
-//                     <div class="user-info">
-//                       <p class="user-name">${slider.user.name}</p>
-//                       <p class="user-location">${slider.user.location}</p>
-//                     </div>
-//                   </div>
-//                 </div>`;
-
-//   // app.insertAdjacentHTML("afterbegin", html)
-//   // jel ovo treba bit <ul>???
-//   review.innerHTML += html
-// })
-
-
-
-
 
 // arraydata = slides je array objekata
 // currentIndex, loop 
