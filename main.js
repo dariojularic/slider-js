@@ -13,7 +13,7 @@ const slidezs = document.querySelectorAll(".slidez");
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 const container = document.querySelector(".container");
-let currentSlide = 1;
+let currentSlide = 0;
 
 function sliderFactory() {
   let slidersArray = []
@@ -22,25 +22,25 @@ function sliderFactory() {
   const setSliders = (sliders) => slidersArray = sliders;
 
   const moveSliderLeft = () => {
-    if (currentSlide >= slidezs.length) currentSlide = 0
+    if (currentSlide >= slidezs.length - 1) currentSlide = 0
+    else currentSlide++
 
     for (let i = 0; i < slidezs.length; i++) {
       slidezs[i].style.transform = `translateX(${(i * 100) - (currentSlide * 100)}%)`
     }
-    currentSlide++
     console.log("currentSlide is", currentSlide)
   }
   
 
 
-  
+
   const moveSliderRight = () => {
-    if (currentSlide === 1) currentSlide = 4
+    if (currentSlide <= 0) currentSlide = slidezs.length - 1
+    else currentSlide--
     
     for (let i = 0; i < slidezs.length; i++) {
       slidezs[i].style.transform = `translateX(${(i * 100) - (currentSlide * 100)}%)`
     }
-    currentSlide--
     console.log("currentSlide is", currentSlide)
   }
 
